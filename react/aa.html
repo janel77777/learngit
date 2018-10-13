@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html >
+    <head>
+       
+        <script src="build/react.js"></script>
+      <script src="build/react-dom.js"></script>
+    </head>
+    <body>
+         
+     
+      
+        <form ng-app="App" ng-controller="validateCtrl" name="Myform">
+<p>用户名</p>
+    <input type="text" name="user" ng-model="user" required>
+    <span style="color :red" ng-show="Myform.user.$dirty && Myform.user.$invalid">
+<span ng-show="Myform.user.$error.required">用户名必须</span>
+    </span>
+    <p>邮箱</p>
+    <input type="email" name="email" ng-model="email" required>
+    <span style="color:red" ng-show="Myform.email.$dirty && Myform.email.$invalid">
+<span ng-show="Myform.email.$error.required">邮箱必填</span>
+<span ng-show="Myform.email.$error.email">非法邮箱 </span>
+    </span>
+
+    <input type="submit" ng-disabled="Myform.user.$dirty && Myform.user.$invalid ||
+  Myform.email.$dirty && Myform.email.$invalid">
+        </form>
+    </body>
+</html>

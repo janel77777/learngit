@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+     <div id="example2"></div>
+    <script type="text/babel">
+
+      var data = "ewew";
+
+      var MyTitle = React.createClass({
+        propTypes: {
+          title: React.PropTypes.string.isRequired,
+        },
+        getDefaultProps:function(){
+return {title:"ddd"};
+
+        },
+
+        render: function() {
+          return <h1> {this.props.title} </h1>;
+        }
+      });
+
+      ReactDOM.render(
+        <MyTitle />,
+        document.getElementById('example')
+      );
+
+      var MyTitle2=React.createClass({
+propTypes:{
+Title:React.PropTypes.string.isRequired
+
+},
+render:function(){
+  return <h1>{this.props.title}</h1>;
+}
+      });
+      ReactDOM.render(
+ <MyTitle2 Title={data}></MyTitle2>,
+        document.getElementById('example2'));
+
+    </script>
+  </body>
+</html>
+
